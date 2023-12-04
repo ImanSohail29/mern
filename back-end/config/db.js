@@ -1,4 +1,4 @@
-require("dotenv").config() //to read environmental variables(to read connection string)
+//to read environmental variables(to read connection string)
 const mongoose = require("mongoose");
 const connectDB = async () => {
     try { //await is used to make the line synchronous(it does not move to next line until the operation is completed)

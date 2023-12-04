@@ -13,7 +13,7 @@ const updateProductApiRequest = async (productId, formInputs) => {
 const imageDeleteHandler = async (imagePath, productId) => {
     let encoded = encodeURIComponent(imagePath)
     if (process.env.NODE_ENV === "production") {
-        await axios.delete(`/api/products/admin/image/${encoded}/${productId}`)
+        await axios.delete(`/api/products/admin/image/${encoded}/${productId}?cloudinary=true`)
     } else {
         await axios.delete(`/api/products/admin/image/${encoded}/${productId}?cloudinary=true`)
     }

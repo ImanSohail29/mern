@@ -2,6 +2,7 @@ import { Container, Row } from "react-bootstrap";
 import CategoryCardComponent from "../../components/CategoryCardComponent";
 import ProductCarouselComponent from "../../components/ProductCarouselComponent";
 import { useEffect, useState } from "react";
+import MetaComponent from "../../components/MetaComponent";
 
 const HomePageComponent = ({ categories,getBestSellers }) => {
     const [mainCategories, setMainCategories] = useState([])
@@ -17,6 +18,7 @@ setMainCategories(()=>categories.filter((category)=>!category.name.includes("/")
     }, [categories])
     return (
         <>
+        <MetaComponent></MetaComponent>
             <ProductCarouselComponent bestSellers={bestSellers}></ProductCarouselComponent>
             <Container>
                 <Row xs={1} md={2} className="g-4 mt-5">

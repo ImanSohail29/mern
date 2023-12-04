@@ -274,7 +274,7 @@ const AdminEditProductPageComponent = ({ categories, fetchProduct, updateProduct
                             <Form.Control disabled={product.images && product.images.length >= 3} required={product.images && product.images.length === 0} name="image" type="file" multiple
                                 onChange={e => {
                                     setIsUploading("upload files in progress ... ")
-                                    if (process.env.NODE_ENV === "production") {
+                                    if (process.env.NODE_ENV !== "production") {
                                         uploadImagesApiRequest(e.target.files, id)
                                             .then(data => {
                                                 setIsUploading("upload file completed ")

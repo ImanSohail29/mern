@@ -37,7 +37,7 @@ const AdminCreateProductPageComponent = ({ categories, createProductApiRequest, 
             createProductApiRequest(formInputs)
                 .then(data => {
                     if (images) {
-                        if (process.env.NODE_ENV !== "production") {
+                        if (process.env.NODE_ENV === "production") {
                             uploadImagesCloudinaryApiRequest(images, data.productId)
                             console.log(images)
                         } else {
